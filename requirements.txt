@@ -1,0 +1,16 @@
+fastparquet==2024.2.0
+imbalanced-learn==0.12.2
+ipython>=8.10
+jupyterlab>=3.0
+kedro~=0.19.3
+kedro-datasets>=1.0
+kedro-telemetry>=0.3.1
+kedro-viz>=6.7.0
+notebook
+pandas==2.2.1
+pytest~=7.2
+pytest-cov~=3.0
+pytest-mock>=1.7.1, <2.0
+ruff~=0.1.8
+scikit-learn==1.4.1.post1
+tqdm==4.66.2

@@ -1,0 +1,59 @@
+# This is a boilerplate parameters config generated for pipeline 'data_processing'
+# using Kedro 0.19.3.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.19.3/configuration/parameters.html
+predictor_cols:
+  - "trans_date_trans_time"
+  - "category"
+  - "amt"
+  - "city"
+  - "state"
+  - "dob"
+  - "is_fraud"
+
+target_col: "is_fraud"
+
+top_categories: # from notebooks/01_preprocess.ipynb
+  cities:
+    - "Birmingham"
+    - "San Antonio"
+    - "Utica"
+    - "Phoenix"
+    - "Meridian"
+    - "Thomas"
+    - "Conway"
+    - "Cleveland"
+    - "Warren"
+  states:
+    - "TX"
+    - "NY"
+    - "PA"
+    - "CA"
+    - "OH"
+    - "MI"
+    - "IL"
+    - "FL"
+    - "AL"
+    - "MO"
+    - "MN"
+
+test_size: 0.2
+
+undersampling:
+  desired_proportion: 0.2
+  total_samples: 35000
+
+preprocess_features:
+  numeric_features:
+    standard:
+      - "amt"
+    minmax:
+      - "age"
+      - "hour"
+      - "dayofweek"
+  categorical_features:
+    onehot:
+      - "category"
+      - "city"
+      - "state"

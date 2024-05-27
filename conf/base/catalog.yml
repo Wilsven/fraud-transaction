@@ -1,0 +1,108 @@
+fraud_train_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/fraudTrain.csv
+  load_args:
+    index_col: false
+  save_args:
+    index: false
+
+fraud_test_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/fraudTest.csv
+  load_args:
+    index_col: false
+  save_args:
+    index: false
+
+raw_merged:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/raw_merged.csv
+  load_args:
+    index_col: false
+  save_args:
+    index: false
+
+raw_merged_prepared:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/raw_merged_prepared.csv
+  load_args:
+    index_col: false
+  save_args:
+    index: false
+
+fraud_train_unprocessed:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/fraud_train_unprocessed.csv
+  load_args:
+    index_col: false
+  save_args:
+    index: false
+
+fraud_test_unprocessed:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/fraud_test_unprocessed.csv
+  load_args:
+    index_col: false
+  save_args:
+    index: false
+
+fraud_val_unprocessed:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/fraud_val_unprocessed.csv
+  load_args:
+    index_col: false
+  save_args:
+    index: false
+
+fraud_train_processed:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/fraud_train_processed.csv
+  load_args:
+    index_col: false
+  save_args:
+    index: false
+
+fraud_test_processed:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/fraud_test_processed.csv
+  load_args:
+    index_col: false
+  save_args:
+    index: false
+
+fraud_val_processed:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/fraud_val_processed.csv
+  load_args:
+    index_col: false
+  save_args:
+    index: false
+
+ml_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/ml_model.pkl
+  backend: pickle
+
+classification_val_report:
+  type: pandas.JSONDataset
+  filepath: data/08_reporting/validation/classification_report.json
+
+confusion_val_matrix:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/validation/confusion_matrix.png
+
+predictions:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/predictions.csv
+
+classification_test_report:
+  type: pandas.JSONDataset
+  filepath: data/08_reporting/evaluation/classification_report.json
+
+confusion_test_matrix:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/evaluation/confusion_matrix.png
+
+evaluation_plot:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/evaluation/auc_plots.png
